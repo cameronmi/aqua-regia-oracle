@@ -321,7 +321,7 @@ const results = [
   },
   {
     msg: '喜歡他的作品的人需要對無可奈何的悲劇這件事有一點共感與體悟。至少讀者是個需要有些微同理心的人，才能抓到他劇情裡面幽微的那個點，我們才能理解在他的故事中，許多人只是因為某些齒輪對錯了地方，所以一切都錯位了，他的故事中惡並非就是純粹的惡，並不是像傳統王道漫畫一樣，惡就是徹底的惡，而是在劇情走到最後時，我們會發現惡的成因，許多時候原自於荒謬的錯位。',
-    link: 'https://www.plurk.com/p/p1beix',
+    link: 'https://www.plurk.com/p/p1puex',
   },
   {
     msg: '每次當有認識的人沮喪，我就會說你看看我，或者你看看＿＿＿，我們接受的惡意毫無道理。是有人詛咒他別再出書的惡意。我並不想拿這種比較級的痛苦來說服大家沒有得獎並不重要，而是看看我們，即使沒有得獎也仍在寫著。為甚麼？因為我知道自己是為了甚麼而寫、而持續的。得不得獎不是不重要，一時的成敗也難免令自己沮喪，只是對自己而言，重要的究竟是甚麼。',
@@ -386,53 +386,53 @@ function onDraw(element) {
 
   setTimeout(function () {
     element.className = 'disabled'
-    setMessage('請擲筊')
-    const beiElement = document.getElementById('bei-set')
-    beiElement.className = 'bei0'
-    beiElement.removeAttribute('disabled')
+    setMessage('請按筊杯擲筊')
+    const pueElement = document.getElementById('pue-set')
+    pueElement.className = 'pue0'
+    pueElement.removeAttribute('disabled')
     window.resultIndex = resultIndex
   }, timeout)
 }
 
-function bobei() {
+function puahPue() {
   setMessage('擲筊中......')
-  const element = document.getElementById('bei-set')
+  const element = document.getElementById('pue-set')
   element.className = 'gif'
   element.setAttribute('disabled', 'true')
 
   const timeout = Math.round(Math.random() * 1500) + 3000
   const rand = Math.random()
   const p = (1 - specialChance) / 4
-  let bei,
+  let pue,
     message,
     pass = false
   if (rand < specialChance) {
-    bei = 4
+    pue = 4
   } else if (rand < specialChance + p) {
-    bei = 0
+    pue = 0
   } else if (rand < specialChance + p * 2) {
-    bei = 1
+    pue = 1
   } else if (rand < specialChance + p * 3) {
-    bei = 2
+    pue = 2
   } else {
-    bei = 3
+    pue = 3
   }
 
-  gtag('event', 'bo_bei', {
+  gtag('event', 'puah_pue', {
     timeout,
     rand,
-    bei,
+    pue,
     prevAction: sessionStorage.getItem('prevAction'),
     prevResult: sessionStorage.getItem('prevResult'),
   })
-  sessionStorage.setItem('prevAction', 'bo_bei')
-  sessionStorage.setItem('prevResult', bei)
+  sessionStorage.setItem('prevAction', 'puah_pue')
+  sessionStorage.setItem('prevResult', pue)
 
-  if (bei === 1) {
+  if (pue === 1) {
     message = '蓋杯，請按籤筒重新求籤'
-  } else if (bei === 3) {
+  } else if (pue === 3) {
     message = '笑杯，請按籤筒重新求籤'
-  } else if (bei === 4) {
+  } else if (pue === 4) {
     message = '立杯，請觀看以下籤詩'
     pass = true
   } else {
@@ -441,7 +441,7 @@ function bobei() {
   }
 
   setTimeout(function () {
-    element.className = `bei${bei}`
+    element.className = `pue${pue}`
     setMessage(message)
 
     if (pass) {
@@ -456,9 +456,9 @@ function onRestart() {
   enableButton()
   document.getElementById('result').className = 'hidden'
   document.getElementById('end').className = 'hidden'
-  document.getElementById('bei-set').className = ''
+  document.getElementById('pue-set').className = ''
   document.getElementsByClassName('container')[0].scrollTo(0, 0)
-  setMessage('請取籤')
+  setMessage('請按籤筒取籤')
   gtag('event', 'click_restart', {
     prevAction: sessionStorage.getItem('prevAction'),
     prevResult: sessionStorage.getItem('prevResult'),

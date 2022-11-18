@@ -196,20 +196,20 @@ body {
 .container .content #draw-button.drawing .gif {
   display: block;
 }
-.container .content #bei-set img {
+.container .content #pue-set img {
   display: none;
   height: 64px;
 }
-.container .content #bei-set.hidden .gif {
+.container .content #pue-set.hidden .gif {
   /* this is to reserved the space for hidden box */
   display: block;
 }
-.container .content #bei-set.gif .gif,
-.container .content #bei-set.bei0 .bei0,
-.container .content #bei-set.bei1 .bei1,
-.container .content #bei-set.bei2 .bei2,
-.container .content #bei-set.bei3 .bei3,
-.container .content #bei-set.bei4 .bei4 {
+.container .content #pue-set.gif .gif,
+.container .content #pue-set.pue0 .pue0,
+.container .content #pue-set.pue1 .pue1,
+.container .content #pue-set.pue2 .pue2,
+.container .content #pue-set.pue3 .pue3,
+.container .content #pue-set.pue4 .pue4 {
   display: block;
 }
 .container .flex-container {
