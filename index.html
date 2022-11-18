@@ -43,7 +43,7 @@
       function setCookie(cname, cvalue) {
         const d = new Date();
         let updatedAt = 'updatedAt=' + d.toUTCString();
-        document.cookie = cname + '=' + cvalue + ';' + updatedAt + ';path=/';
+        document.cookie = `${document.cookie};${cname}=${cvalue};${updatedAt};path=/`;
       }
       function getCookie(cname) {
         let name = cname + '=';
