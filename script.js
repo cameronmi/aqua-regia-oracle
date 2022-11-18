@@ -429,9 +429,9 @@ function bobei() {
   sessionStorage.setItem('prevResult', bei)
 
   if (bei === 1) {
-    message = '笑杯，請按籤筒重新求籤'
-  } else if (bei === 3) {
     message = '蓋杯，請按籤筒重新求籤'
+  } else if (bei === 3) {
+    message = '笑杯，請按籤筒重新求籤'
   } else if (bei === 4) {
     message = '立杯，請觀看以下籤詩'
     pass = true
