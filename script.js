@@ -40,6 +40,7 @@ const results = [
     msg: '我要心平氣和<br>1 + 1 = 5<br>1 + 1 = 5<br>1 + 1 = 5',
     link: 'https://www.plurk.com/p/ovit4k',
   },
+  /* 10 */
   {
     msg: '生活就是不停的損壞，而且只有損壞。',
     link: 'https://www.plurk.com/p/p272vr',
@@ -80,6 +81,7 @@ const results = [
     msg: '其實我們人的一生也不需要這麼輕啦。',
     link: 'https://www.plurk.com/p/owyv6q',
   },
+  /* 20 */
   {
     msg: '我每次看到有些人什麼都批什麼都評，也不看看自己什麼樣子有沒有那個水準，每次都很想問你是認真的嗎。<br>真的是小ㄐㄐ還每天都想買特大號保險套，以為自己能裝屌結果裝的都是屁。',
     link: 'https://www.plurk.com/p/owwezs',
@@ -120,6 +122,7 @@ const results = [
     msg: '有人問我喜歡卡娜赫拉不會覺得害羞嗎<br>我的回答是，我又不偷不搶不拐不騙，有什麼好害羞的。我花錢買自己喜歡的東西，我又不是花錢去嫖去賭，我有什麼不好意思的。',
     link: '',
   },
+  /* 30 */
   {
     msg: '沒有雷霆手段，你怎麼好意思有什麼菩薩心腸？<br>你的菩薩心腸要是真的幫助了誰那當然皆大歡喜，但最有可能的結果是你做了個菩薩，對方只把你當個破木頭東砍一刀西砍一刀最後拿去當柴燒。<br>你怎麼會認為真誠與正直會幫助你渡過所有難關，最有可能的是你身邊所有的人都被拖下水，你想滿足自己的真誠心，但所有人都被你的真誠拖進地獄裡。',
     link: 'https://www.plurk.com/p/ow3a08',
@@ -383,7 +386,7 @@ function onDraw(element) {
 
   setTimeout(function () {
     element.className = 'disabled'
-    setMessage('請擲茭')
+    setMessage('請擲筊')
     const beiElement = document.getElementById('bei-set')
     beiElement.className = 'bei0'
     beiElement.removeAttribute('disabled')
@@ -392,7 +395,7 @@ function onDraw(element) {
 }
 
 function bobei() {
-  setMessage('擲茭中......')
+  setMessage('擲筊中......')
   const element = document.getElementById('bei-set')
   element.className = 'gif'
   element.setAttribute('disabled', 'true')
