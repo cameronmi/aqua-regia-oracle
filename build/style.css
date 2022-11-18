@@ -122,7 +122,7 @@ body {
   background: white;
   min-height: 50px;
   width: calc(100% - 30px);
-  margin-left: -4px;
+  margin-left: -5px;
   max-width: min(345px, max(100vw - 50px, 100% - 50px));
   vertical-align: top;
   padding: 2px 5px 5px 12px;
