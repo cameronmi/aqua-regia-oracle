@@ -132,11 +132,19 @@ body {
   vertical-align: top;
   padding: 2px 5px 5px 12px;
   text-align: left;
-  border-radius: 5px;
+  border-radius: 0px 5px 5px 5px;
 }
-.container .content #result .p_img {
+.container .content #result .profile {
   display: inline-block;
   vertical-align: top;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+}
+.container .content #result .profile img {
+  width: 100%;
+  height: auto;
 }
 .container .content #end {
   text-align: center;
@@ -240,6 +248,11 @@ body {
 
 .collapsed {
   display: none !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 button {
