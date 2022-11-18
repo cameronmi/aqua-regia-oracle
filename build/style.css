@@ -1,0 +1,264 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans Regular", "Tahoma", "Verdana", "sans-serif";
+  background: #d8d3d3;
+  width: max(100vw, 400px);
+  height: 100vh;
+}
+
+.wrapper {
+  min-width: max(min(50vh, 100vw), 400px);
+  max-width: max(min(75vh, 100vw), 400px);
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  background: rgba(159, 159, 159, 0.6);
+  position: relative;
+}
+
+.header,
+.footer {
+  background: #333;
+  width: 100%;
+  position: absolute;
+  color: #ccc;
+  z-index: 999;
+}
+
+.header {
+  padding: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+.header p {
+  text-align: center;
+  margin: 0;
+}
+
+.footer {
+  min-height: 30px;
+  height: auto;
+  bottom: 0;
+}
+.footer img {
+  display: block;
+  position: relative;
+  height: 100px;
+  margin: -25px auto;
+}
+.footer #copyright {
+  right: calc(50% - 125px);
+  color: #aaa;
+  position: absolute;
+  bottom: 16px;
+}
+.footer #copyright .material-icons {
+  font-size: 14px;
+  cursor: pointer;
+}
+.footer #copyright .tooltip-text {
+  top: -30px;
+  left: -80px;
+  background: #ccc;
+}
+
+.bg {
+  opacity: 0.4;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 40px;
+  min-height: calc(100vh - 90px);
+  min-width: min(100%, 100vw, 400px);
+  width: auto;
+  max-height: 150vw;
+  height: auto;
+  max-width: 75vph;
+}
+
+.container {
+  overflow: hidden scroll;
+  position: relative;
+  height: calc(100vh - 90px);
+  top: 40px;
+}
+.container .content {
+  z-index: 99;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+.container .content > .flex-box:nth-child(1) {
+  -ms-flex: 2 2 20%;
+      flex: 2 2 20%;
+  min-height: 270px;
+}
+.container .content > .flex-box:nth-child(2) {
+  -ms-flex: 1 1 10%;
+      flex: 1 1 10%;
+  min-height: 70px;
+}
+.container .content > .flex-box:nth-child(3) {
+  -ms-flex: 7 7 70%;
+      flex: 7 7 70%;
+  width: 100%;
+}
+.container .content #result {
+  margin-top: 50px;
+  text-align: center;
+  vertical-align: top;
+}
+.container .content #result .message {
+  display: inline-block;
+  background: white;
+  min-height: 50px;
+  width: calc(100% - 30px);
+  margin-left: -4px;
+  max-width: min(345px, max(100vw - 50px, 100% - 50px));
+  vertical-align: top;
+  padding: 2px 5px 5px 12px;
+  text-align: left;
+  border-radius: 5px;
+}
+.container .content #result .p_img {
+  display: inline-block;
+  vertical-align: top;
+}
+.container .content #end {
+  text-align: center;
+}
+.container .content #end #feedback {
+  margin: auto;
+  font-size: smaller;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  width: calc(100% - 30px);
+  max-width: min(345px, max(100vw - 50px, 100% - 50px));
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.container .content #end #feedback .flex-box {
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+.container .content #end #feedback .flex-box:nth-child(1) {
+  -ms-flex-pack: start;
+      justify-content: start;
+}
+.container .content #end #feedback .flex-box:nth-child(2) {
+  -ms-flex-pack: end;
+      justify-content: end;
+}
+.container .content #end #feedback .flex-box .tooltip-text {
+  width: 180px;
+  top: 25px;
+  left: -65px;
+}
+.container .content #end #feedback i.material-icons {
+  font-size: small;
+  padding: 0;
+}
+.container .content #end #feedback a {
+  text-decoration: none;
+  color: inherit;
+}
+.container .content #end .real-button {
+  margin: 10px auto 20px;
+  font-size: large;
+  padding: 5px 20px;
+}
+.container .content #draw-button {
+  padding: 20px 0 30px;
+}
+.container .content #draw-button img {
+  width: 250px;
+}
+.container .content #draw-button .gif {
+  display: none;
+}
+.container .content #draw-button.drawing .static {
+  display: none;
+}
+.container .content #draw-button.drawing .gif {
+  display: block;
+}
+.container .content #bei-set img {
+  display: none;
+  height: 64px;
+}
+.container .content #bei-set.hidden .gif {
+  /* this is to reserved the space for hidden box */
+  display: block;
+}
+.container .content #bei-set.gif .gif, .container .content #bei-set.bei0 .bei0, .container .content #bei-set.bei1 .bei1, .container .content #bei-set.bei2 .bei2, .container .content #bei-set.bei3 .bei3, .container .content #bei-set.bei4 .bei4 {
+  display: block;
+}
+.container .flex-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  row-gap: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.container .flex-container .flex-box {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.collapsed {
+  display: none !important;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+button.real-button {
+  color: #ccc;
+  background: #666;
+  border-radius: 5px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltip-text {
+  font-size: 0.8em;
+  visibility: hidden;
+  width: 150px;
+  background-color: rgba(159, 159, 159, 0.657);
+  color: #333;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
