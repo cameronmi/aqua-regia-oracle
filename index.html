@@ -1,85 +1,164 @@
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css"
+      integrity="sha512-ZfKn7az0YmtPUojZnRXO4CUdt3pn+ogBAyGbqGplrCIR5B/tQwPGtF2q29t+zQj6mC/20w4sSl0cF5F3r0HKSQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="build/style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-C4CZH6WP5H"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function setCookie(cname, cvalue) {
+        const d = new Date()
+        let updatedAt = 'updatedAt=' + d.toUTCString()
+        document.cookie = cname + '=' + cvalue + ';' + updatedAt + ';path=/'
+      }
+      function getCookie(cname) {
+        let name = cname + '='
+        let decodedCookie = decodeURIComponent(document.cookie)
+        let ca = decodedCookie.split(';')
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i]
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1)
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length)
+          }
+        }
+        return ''
+      }
+      function getUserID() {
+        let userID = getCookie('userID')
+        if (userID == '') {
+          userID = localStorage.getItem('userID')
+        }
+        if (userID == '' || userID == null) {
+          userID = crypto.randomUUID()
+          setCookie('userID', userID)
+          localStorage.setItem('userID', userID)
+        }
+        return userID
+      }
 
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <script type="text/javascript" src="javascripts/script.js"></script>
+      gtag('config', 'G-C4CZH6WP5H')
+      gtag('config', 'G-C4CZH6WP5H', {
+        user_id: getUserID(),
+      })
+      gtag('config', 'G-C4CZH6WP5H', { debug_mode: true })
+    </script>
+    <script type="text/javascript" src="script.js"></script>
 
     <title>王水仙尊 線上求籤</title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
 
   <body>
-    <div id="message" class="header">
-      <p>
-        請取籤
-      </p>
-    </div>
-
-    <div class='container'>
-      <img class='bg' src='https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/thumbnails%2F32KLUzVmXZ5CCozgIKwJmO.jpeg' />
-
-      <div class='content'>
-
-        <button id="draw-button" onclick="onDraw(this)">
-          <img class="static" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/fries-unscreen.png?v=1668461232147" />
-          <img class="gif" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/ezgif-2-f8b4947dde.gif?v=1668461635517" />
-        </button>
-
-        <button id="bei-set" onclick='bobei()'>
-          <img class="gif" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/bobei.gif" />
-          <img class="bei0" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/bobei0.png" />
-          <img class="bei1" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/bobei1.png" />
-          <img class="bei2" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/bobei2.png" />
-          <img class="bei3" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/bobei3.png" />
-          <img class="bei4" src="https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/bobei4.png" />
-        </button>
-
-        <div id="result" class='hidden'>
-
-          <div class="p_img"><img src="//avatars.plurk.com/7979674-small47708369.gif"></div>
-          <div class="message">
-            <p></p>
+    <div class="wrapper">
+      <div id="message" class="header">
+        <p>請取籤</p>
+      </div>
+      <img class="bg" src="assets/background.jpeg" />
+      <div class="container">
+        <div class="content flex-container">
+          <div class="flex-box">
+            <button id="draw-button" onclick="onDraw(this)">
+              <img class="static" src="assets/fries.png" />
+              <img class="gif" src="assets/fries.gif" />
+            </button>
           </div>
-
-
-
-          <p></p>
+          <div class="flex-box">
+            <button id="bei-set" onclick="bobei()">
+              <img class="gif" src="assets/bobei.gif" />
+              <img class="bei0" src="assets/bobei0.png" />
+              <img class="bei1" src="assets/bobei1.png" />
+              <img class="bei2" src="assets/bobei2.png" />
+              <img class="bei3" src="assets/bobei3.png" />
+              <img class="bei4" src="assets/bobei4.png" />
+            </button>
+          </div>
+          <div class="flex-box">
+            <div id="result" class="hidden">
+              <div class="p_img">
+                <img src="//avatars.plurk.com/7979674-small47708369.gif" />
+              </div>
+              <div class="message">
+                <p></p>
+              </div>
+            </div>
+            <div id="end" class="hidden">
+              <button id="restart" class="real-button" onclick="onRestart()">
+                重來
+              </button>
+              <div id="feedback" class="flex-container">
+                <div class="flex-box">
+                  你喜歡這則選文嗎？
+                  <button id="like" onClick="sendFeedBack(true)">
+                    <i class="material-icons">thumb_up</i>
+                  </button>
+                  <button id="dislike" onClick="sendFeedBack(true)">
+                    <i class="material-icons">thumb_down</i>
+                  </button>
+                </div>
+                <div class="flex-box">
+                  <div class="tooltip hidden">
+                    <a href="" target="_blank" onClick="viewSource()"
+                      >看全文 <i class="material-icons">open_in_new</i></a
+                    >
+                    <span class="tooltip-text"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div id="end" class='hidden'>
-
-
-        <button id="back" onclick="onBack()">
-          重來
-        </button>
-        <div id="feedback" >
-          你喜歡這則選文嗎？
-          <button id="like" >
-            <i class="material-icons">thumb_up</i>
-          </button>
-          <button id="dislike">
-            <i class="material-icons">thumb_down</i>
-          </button>
-          <a url=''>看全文 <i class="material-icons">open_in_new</i></a>
-        </div>
+      </div>
+      <div class="footer">
+        <img src="assets/title_white.png" />
+        <div id="copyright" class="tooltip">
+          <i class="material-icons">&#xe90c; </i>
+          <span class="tooltip-text">文字和掐掐都屬於仙尊。</span>
         </div>
       </div>
     </div>
-    <div class='footer'>
-      <img src='https://cdn.glitch.global/08face63-939b-4248-a124-71ad3826a6e2/title_white.png?v=1668479050512' />
-        <div id="copyright" class="tooltip">
-          <i class="material-icons">&#xe90c;	</i>
-          <span class="tooltiptext">文字和掐掐都屬於仙尊。</span>
-        </div>
-    </div>
   </body>
-
 </html>
