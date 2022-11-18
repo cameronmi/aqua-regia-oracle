@@ -39,49 +39,49 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function setCookie(cname, cvalue) {
-        const d = new Date()
-        let updatedAt = 'updatedAt=' + d.toUTCString()
-        document.cookie = cname + '=' + cvalue + ';' + updatedAt + ';path=/'
+        const d = new Date();
+        let updatedAt = 'updatedAt=' + d.toUTCString();
+        document.cookie = cname + '=' + cvalue + ';' + updatedAt + ';path=/';
       }
       function getCookie(cname) {
-        let name = cname + '='
-        let decodedCookie = decodeURIComponent(document.cookie)
-        let ca = decodedCookie.split(';')
+        let name = cname + '=';
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
         for (let i = 0; i < ca.length; i++) {
-          let c = ca[i]
+          let c = ca[i];
           while (c.charAt(0) == ' ') {
-            c = c.substring(1)
+            c = c.substring(1);
           }
           if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length)
+            return c.substring(name.length, c.length);
           }
         }
-        return ''
+        return '';
       }
       function getUserID() {
-        let userID = getCookie('userID')
+        let userID = getCookie('userID');
         if (userID == '') {
-          userID = localStorage.getItem('userID')
+          userID = localStorage.getItem('userID');
         }
         if (userID == '' || userID == null) {
-          userID = crypto.randomUUID()
-          setCookie('userID', userID)
-          localStorage.setItem('userID', userID)
+          userID = crypto.randomUUID();
+          setCookie('userID', userID);
+          localStorage.setItem('userID', userID);
         }
-        return userID
+        return userID;
       }
 
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
+      gtag('js', new Date());
 
-      gtag('config', 'G-C4CZH6WP5H')
+      gtag('config', 'G-C4CZH6WP5H');
       gtag('config', 'G-C4CZH6WP5H', {
         user_id: getUserID(),
-      })
+      });
     </script>
     <script type="text/javascript" src="script.js"></script>
 
