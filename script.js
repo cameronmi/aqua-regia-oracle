@@ -440,6 +440,11 @@ const results = [
     link: 'https://www.plurk.com/p/p161g1',
     index: 87,
   },
+  {
+    msg: '所有人都覺得你很好踩想踩你一腳的時候，你自己就該檢討，連你自己都不捍衛自己的尊嚴，就別奢望別人會顧及到你。',
+    link: 'https://www.plurk.com/p/p2eywm',
+    index: 88,
+  },
 ];
 
 function setMessage(msg) {
@@ -517,7 +522,7 @@ function puahPue() {
     message = '立杯，請觀看以下籤詩';
     pass = true;
   } else {
-    message = '允杯，請觀看以下籤詩';
+    message = '允杯，請觀看以下籤文';
     pass = true;
   }
 
