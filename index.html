@@ -64,6 +64,7 @@
         let userID = getCookie('userID');
         if (userID == '') {
           userID = localStorage.getItem('userID');
+          setCookie('userID', userID);
         }
         if (userID == '' || userID == null) {
           userID = crypto.randomUUID();
@@ -77,8 +78,6 @@
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
-      gtag('config', 'G-C4CZH6WP5H');
       gtag('config', 'G-C4CZH6WP5H', {
         user_id: getUserID(),
       });
