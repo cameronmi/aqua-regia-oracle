@@ -5,13 +5,13 @@ body {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans Regular',
     'Tahoma', 'Verdana', 'sans-serif';
   background: #d8d3d3;
-  width: max(100vw, 400px);
+  width: 100vw;
   height: 100vh;
 }
 
 .wrapper {
-  min-width: max(min(50vh, 100vw), 400px);
-  max-width: max(min(75vh, 100vw), 400px);
+  min-width: min(50vh, 100vw);
+  max-width: min(75vh, 100vw);
   margin: auto;
   border-radius: 10px;
   overflow: hidden;
@@ -83,7 +83,7 @@ body {
   margin: auto;
   top: 40px;
   min-height: calc(100vh - 110px);
-  min-width: min(100%, 100vw, 400px);
+  min-width: 100%;
   width: auto;
   max-height: 150vw;
   height: auto;
@@ -162,14 +162,18 @@ body {
 .container .content #end #feedback .flex-box {
   -ms-flex-direction: row;
   flex-direction: row;
+  background: rgba(250, 250, 250, 0.4);
+  border-radius: 5px;
 }
 .container .content #end #feedback .flex-box:nth-child(1) {
   -ms-flex-pack: start;
   justify-content: start;
+  padding: 4px 0 0 6px;
 }
 .container .content #end #feedback .flex-box:nth-child(2) {
   -ms-flex-pack: end;
   justify-content: end;
+  padding: 2px 2px 4px 6px;
 }
 .container .content #end #feedback .flex-box .tooltip-text {
   width: 180px;
@@ -188,6 +192,8 @@ body {
   margin: 10px auto 20px;
   font-size: large;
   padding: 5px 20px;
+  color: white;
+  background: #ff574d;
 }
 .container .content #draw-button {
   padding: 20px 0 30px;
@@ -285,4 +291,61 @@ button.real-button {
 }
 .tooltip:hover .tooltip-text {
   visibility: visible;
+}
+
+@media only screen and (max-width: 450px) {
+  .container .content > .flex-box:nth-child(1) {
+    min-height: 160px;
+  }
+  .container .content > .flex-box:nth-child(2) {
+    min-height: 45px;
+  }
+  .container .content #end .real-button {
+    margin: 10px auto;
+    font-size: small;
+    padding: 5px 15px;
+  }
+  .container .content #draw-button img {
+    width: 150px;
+  }
+  .container .content #pue-set img {
+    height: 40px;
+  }
+  .container .content .message {
+    max-width: min(345px, 100vw - 50px, 100% - 50px);
+  }
+  .container .content button.real-button {
+    margin: 10px auto;
+    font-size: small;
+    padding: 5px 15px;
+  }
+  body {
+    font-size: small;
+  }
+  .header {
+    padding: 7px;
+    height: 15px;
+  }
+  .bg {
+    top: 30px;
+    min-height: calc(100vh - 72px);
+  }
+  .container {
+    height: calc(100vh - 72px);
+    top: 30px;
+  }
+  .footer img {
+    height: 75px;
+  }
+  .footer #copyright {
+    right: calc(50% - 90px);
+    bottom: 28px;
+  }
+  .footer #copyright .material-icons {
+    font-size: x-small;
+  }
+  .footer #disclaimer {
+    font-size: xx-small;
+    padding: 3px 0;
+  }
 }
