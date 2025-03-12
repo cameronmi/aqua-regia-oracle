@@ -223,7 +223,8 @@ body {
 .container .content #pue-set.pue1 .pue1,
 .container .content #pue-set.pue2 .pue2,
 .container .content #pue-set.pue3 .pue3,
-.container .content #pue-set.pue4 .pue4 {
+.container .content #pue-set.pue4 .pue4,
+.container .content #pue-set.pue5 .pue5 {
   display: block;
 }
 .container .flex-container {
