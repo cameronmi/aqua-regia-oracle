@@ -624,7 +624,7 @@ function onDraw(element) {
     element.className = 'disabled';
     setMessage('請按筊杯擲筊');
     const pueElement = document.getElementById('pue-set');
-    pueElement.className = 'pue0';
+    pueElement.className = 'pue5';
     pueElement.removeAttribute('disabled');
     window.resultIndex = resultIndex;
   }, timeout);
