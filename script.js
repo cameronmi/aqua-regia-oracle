@@ -1,4 +1,4 @@
- const specialChance = 0.01;
+const specialChance = 0.01;
 const results = [
   {
     msg: '真正的精英是努力與底層對話，而假精英才反復證明自己是仙人。',
@@ -607,7 +607,7 @@ function onDraw(element) {
   element.className = 'drawing';
   element.setAttribute('disabled', true);
 
-  const timeout = Math.round(Math.random() * 4) * 1000 + 1050;
+  const timeout = Math.round(Math.random() * 3 * 1000) + 1050;
   const resultIndex = Math.floor(Math.random() * results.length);
 
   gtag('event', 'draw_stick', {
