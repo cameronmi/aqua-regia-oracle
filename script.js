@@ -607,7 +607,7 @@ function onDraw(element) {
   element.className = 'drawing';
   element.setAttribute('disabled', true);
 
-  const timeout = Math.round(Math.random() * 4) * 1000 + 3050;
+  const timeout = Math.round(Math.random() * 4) * 1000 + 1050;
   const resultIndex = Math.floor(Math.random() * results.length);
 
   gtag('event', 'draw_stick', {
@@ -636,7 +636,7 @@ function puahPue() {
   element.className = 'gif';
   element.setAttribute('disabled', 'true');
 
-  const timeout = Math.round(Math.random() * 1500) + 3000;
+  const timeout = Math.round(Math.random() * 1500) + 1500;
   const rand = Math.random();
   const p = (1 - specialChance) / 4;
   let pue,
